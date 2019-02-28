@@ -16,7 +16,10 @@
   "homepage": "https://github.com/SkyRousse/Gulp-FrontEnd-Test",
   "devDependencies": {
     "gulp": "^4.0.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-sass": "^4.0.1"
+    "gulp-sass": "4.0.2",
+    "gulp-postcss": "8.0.0",
+    "browser-sync": "2.26.3",
+    "gulp-noop": "1.0.0",
+    "autoprefixer": "9.4.3"
   }
 }
