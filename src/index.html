@@ -2,36 +2,11 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test Page</title>
-  <link href="https://fonts.googleapis.com/css?family=Oswald|Slabo+27px" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
+  <!-- @include template/_meta.html -->
 </head>
 
 <body>
-  <section id="header">
-    <header class="contained">
-      <h1>ACME, Inc.</h1>
-      <div class="mobile-nav-link mobile-only">
-        <span class="mobile-nav-toggle">
-          <svg width="31" height="21" xmlns="http://www.w3.org/2000/svg">
-            <g stroke="#FFF" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="square">
-              <path d="M2.5 2.5h26.306M2.5 10.5h26.306M2.5 18.5h26.306" />
-            </g>
-          </svg>
-        </span>
-      </div>
-    </header>
-    <nav id="navigation">
-      <ul class="contained">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Link Two</a></li>
-        <li><a href="#">Three Is Three</a></li>
-        <li><a href="#">Fourth is Best</a></li>
-      </ul>
-    </nav>
-  </section>
+  <!-- @include template/_header.html -->
   <section id="hero">
     <div class="hero">
       <picture>
@@ -240,52 +215,9 @@
       </ul>
     </div>
   </section>
-  <footer>
-    <div class="contained">
-      <div class="col">
-        <h3>Title One</h3>
-        <ul>
-          <li>One Thing</li>
-          <li>Another Thing</li>
-          <li>Two Things</li>
-        </ul>
-      </div>
-      <div class="col">
-        <h3>Two Title</h3>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-          dolores eos qui ratione voluptatem sequi nesciunt.</p>
-      </div>
-      <div class="col">
-        <h3>Third Title</h3>
-        <address>
-          333 Some Address<br>
-          Portland, OR 333333
-        </address>
-      </div>
-      <div class="col">
-        <h3>Last Title That Will Be Long Enough to Wrap</h3>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
-      </div>
-    </div>
-  </footer>
+  <!-- @include template/_footer.html -->
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-pullout" id="mobile-nav" style="display: none;">
-    <div class="pullout-close">
-      <span>X</span>
-    </div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Link Two</a></li>
-      <li><a href="#">Three Is Three</a></li>
-      <li><a href="#">Fourth is Best</a></li>
-    </ul>
-  </div>
-
-  <!-- Load Scripts -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="assets/scripts/app.js"></script>
+  <!-- @include template/_scripts.html-->
 </body>
 
 </html>
