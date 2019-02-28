@@ -21,6 +21,7 @@
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp-concat": "^2.6.1",
+    "gulp-size": "3.0.0",
     "gulp-plumber": "^1.2.1",
     "autoprefixer": "9.4.3",
     "browser-sync": "2.26.3",
@@ -28,6 +29,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-noop": "1.0.0",
     "gulp-postcss": "8.0.0",
+    "postcss-assets": "5.0.0",
     "gulp-sass": "4.0.2"
   }
 }

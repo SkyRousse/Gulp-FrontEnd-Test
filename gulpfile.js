@@ -23,7 +23,9 @@ const
   sourcemaps = devBuild ? require('gulp-sourcemaps') : null,
   // util modules
   noop = require('gulp-noop'),
+  size = require('gulp-size'),
   plumber = require('gulp-plumber'),
+  browsersync = devBuild ? require('browser-sync').create() : null,
   concat = require('gulp-concat');
 
 console.log('Gulp', devBuild ? 'development' : 'production', 'build');
@@ -115,6 +117,12 @@ const syncConfig = {
   port: 8000,
   open: false
 };
+
+// browser-sync
+function server(done) {
+  if (browsersync) browsersync.init(syncConfig);
+  done();
+}
 
 
 /**************** watch task ****************/
