@@ -1,0 +1,128 @@
+// page header
+#header {
+  background: $blue-dk;
+
+  header {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-bottom: 25px;
+    padding-top: 25px;
+
+    h1 {
+      color: $white;
+      display: flex;
+      flex: 1;
+      font-family: $fontTitle;
+      letter-spacing: 0.05em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav-link {
+      position: relative;
+      top: 6px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  nav {
+    background: $blue-lt;
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+
+    > ul {
+      display: flex;
+      flex-flow: row nowrap;
+      margin: 0 inherit;
+      padding: 0;
+
+      @media screen and (max-width: $desktop) {
+        padding: 0 50px;
+      }
+
+      li {
+        display: flex;
+        line-height: 100%;
+        margin: 0;
+
+        a,
+        a:link {
+          color: white;
+          display: inline-block;
+          font-size: .8em;
+          letter-spacing: 0.1em;
+          padding: 12px 20px;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $hover;
+          }
+        }
+
+        &:first-of-type {
+
+          a,
+          a:link {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// Mobile navigation
+#mobile-nav {
+  background: darken($blue-dk, 10%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .pullout-close {
+    height: 35px;
+    width: 55px;
+    color: $blue-lt;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 99;
+
+    span {
+      color: $white;
+      font-family: $fontText;
+      font-size: 2em;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    border-top: 1px solid $blue-lt;
+    margin: 56px 0 0;
+    padding: 0;
+    z-index: 0;
+
+    li {
+      display: block;
+
+      a {
+        border-bottom: 1px solid $blue-lt;
+        color: $white;
+        display: block;
+        padding: 15px 50px 15px 25px;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+// Base styles
+
+h1,
+h2,
+h3,
+h4 {
+  color: $blue-dk;
+  font-family: $fontTitle;
+  line-height: 100%;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: .35em;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 2em;
+  }
+}
+
+p,
+li,
+th,
+td,
+address {
+  font: normal normal normal 18px/1.5 $fontText;
+}
+
+address {
+  margin-top: 1em;
+}
+
+.mobile-only {
+  display: none;
+
+  @media screen and (max-width: $tablet) {
+    display: inline-block;
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.contained {
+  margin: 0 auto;
+  max-width: 1250px;
+  width: 100%;
+
+  @media screen and (min-width: #{$phone + 1}) and (max-width: $desktop) {
+    padding-left: 50px;
+    padding-right: 50px;
+    width: auto;
+  }
+
+  @media screen and (max-width: $phone) {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: auto;
+  }
+}
+
+#content {
+  background: $white;
+
+  .contained {
+
+    .left-col {
+      border-right: 1px solid lighten($brown-gray, 40%);
+
+      h2 {
+        color: $green;
+        font-size: 1.25em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: $brown-gray;
+        font-size: 16px;
+      }
+    }
+
+    .right-col {
+
+    }
+  }
+}
