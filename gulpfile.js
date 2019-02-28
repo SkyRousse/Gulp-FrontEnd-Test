@@ -16,8 +16,17 @@ const
   // sass modules
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
+  // js modules
+  babel = require('gulp-babel'),
+  webpack = require('webpack-stream'),
+  uglify = require('gulp-uglify'),
+  sourcemaps = devBuild ? require('gulp-sourcemaps') : null,
   // util modules
-  browsersync = devBuild ? require('browser-sync').create() : null,
+  noop = require('gulp-noop'),
+  plumber = require('gulp-plumber'),
+  concat = require('gulp-concat');
+
+console.log('Gulp', devBuild ? 'development' : 'production', 'build');
 
 
 /**************** CSS task ****************/
@@ -71,6 +80,30 @@ function css() {
 }
 exports.css = css;
 
+/**************** JS task ****************/
+const jsConfig = {
+  src: dir.src + 'js/main.js',
+  watch: dir.src + 'js/**/*',
+  build: dir.build + 'js/',
+}
+
+function js() {
+  return gulp.src(jsConfig.src)
+    .pipe(plumber())
+    .pipe(webpack({
+      mode: 'production'
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(concat('all.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(jsConfig.build));
+}
+exports.js = js
+
 
 /**************** server task (now private) ****************/
 
@@ -91,10 +124,13 @@ function watch(done) {
   // CSS changes
   gulp.watch(cssConfig.watch, css);
 
+  // JS changes
+  gulp.watch(jsConfig.watch, js);
+
   done();
 
 }
 
 /**************** default task ****************/
 
-exports.default = gulp.series(exports.css, watch, server);
+exports.default = gulp.series(exports.css, exports.js, watch, server);
