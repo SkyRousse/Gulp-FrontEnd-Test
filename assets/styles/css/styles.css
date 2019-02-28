@@ -1,0 +1,243 @@
+h1,
+h2,
+h3,
+h4 {
+  color: #657E8D;
+  font-family: "Oswald", sans-serif;
+  line-height: 100%;
+  margin-top: 0; }
+
+h1 {
+  font-size: 3em;
+  margin-bottom: .35em; }
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2em; } }
+
+p,
+li,
+th,
+td,
+address {
+  font: normal normal normal 18px/1.5 "Slabo 27px", serif; }
+
+address {
+  margin-top: 1em; }
+
+.mobile-only {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .mobile-only {
+      display: inline-block; } }
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; }
+
+.contained {
+  margin: 0 auto;
+  max-width: 1250px;
+  width: 100%; }
+  @media screen and (min-width: 415px) and (max-width: 1350px) {
+    .contained {
+      padding-left: 50px;
+      padding-right: 50px;
+      width: auto; } }
+  @media screen and (max-width: 414px) {
+    .contained {
+      padding-left: 25px;
+      padding-right: 25px;
+      width: auto; } }
+
+#header {
+  background: #657E8D; }
+  #header header {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-bottom: 25px;
+    padding-top: 25px; }
+    #header header h1 {
+      color: #fff;
+      display: flex;
+      flex: 1;
+      font-family: "Oswald", sans-serif;
+      letter-spacing: 0.05em;
+      margin: 0;
+      text-transform: uppercase; }
+    #header header .mobile-nav-link {
+      position: relative;
+      top: 6px; }
+      #header header .mobile-nav-link:hover {
+        cursor: pointer; }
+  #header nav {
+    background: #6BA4BE; }
+    @media screen and (max-width: 768px) {
+      #header nav {
+        display: none; } }
+    #header nav > ul {
+      display: flex;
+      flex-flow: row nowrap;
+      margin: 0 inherit;
+      padding: 0; }
+      @media screen and (max-width: 1350px) {
+        #header nav > ul {
+          padding: 0 50px; } }
+      #header nav > ul li {
+        display: flex;
+        line-height: 100%;
+        margin: 0; }
+        #header nav > ul li a,
+        #header nav > ul li a:link {
+          color: white;
+          display: inline-block;
+          font-size: .8em;
+          letter-spacing: 0.1em;
+          padding: 12px 20px;
+          text-decoration: none;
+          text-transform: uppercase; }
+          #header nav > ul li a:hover,
+          #header nav > ul li a:link:hover {
+            color: #DDDAD2; }
+        #header nav > ul li:first-of-type a,
+        #header nav > ul li:first-of-type a:link {
+          padding-left: 0; }
+
+#mobile-nav {
+  background: #50636f;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  #mobile-nav .pullout-close {
+    height: 35px;
+    width: 55px;
+    color: #6BA4BE;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 99; }
+    #mobile-nav .pullout-close span {
+      color: #fff;
+      font-family: "Slabo 27px", serif;
+      font-size: 2em; }
+    #mobile-nav .pullout-close:hover {
+      cursor: pointer; }
+  #mobile-nav ul {
+    border-top: 1px solid #6BA4BE;
+    margin: 56px 0 0;
+    padding: 0;
+    z-index: 0; }
+    #mobile-nav ul li {
+      display: block; }
+      #mobile-nav ul li a {
+        border-bottom: 1px solid #6BA4BE;
+        color: #fff;
+        display: block;
+        padding: 15px 50px 15px 25px;
+        text-decoration: none; }
+
+#hero {
+  background: #fff; }
+  #hero img {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+
+#content {
+  background: #fff; }
+  #content .contained .left-col {
+    border-right: 1px solid #edeeec; }
+    #content .contained .left-col h2 {
+      color: #87AF90;
+      font-size: 1.25em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase; }
+    #content .contained .left-col p {
+      color: #858C82;
+      font-size: 16px; }
+
+#products {
+  background: #DDDAD2;
+  padding-top: 100px;
+  padding-bottom: 100px; }
+  @media screen and (max-width: 414px) {
+    #products {
+      padding-top: 35px;
+      padding-bottom: 35px; } }
+  #products h2 {
+    font-size: 3em; }
+    @media screen and (max-width: 414px) {
+      #products h2 {
+        font-size: 2em; } }
+  #products .products-grid .item .inner-item {
+    padding: 0 0 50px 0; }
+    #products .products-grid .item .inner-item img {
+      border: 1px solid #858C82;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px; }
+    #products .products-grid .item .inner-item .product-info h3.product-name {
+      margin-bottom: 7px; }
+      #products .products-grid .item .inner-item .product-info h3.product-name a {
+        color: #009fff;
+        text-decoration: none; }
+    #products .products-grid .item .inner-item .product-info .product-sub-title {
+      color: #8d938a;
+      font-size: 14px; }
+
+footer {
+  background: #f3f2ef;
+  border-top: 2px solid #657E8D; }
+  footer .contained {
+    display: flex;
+    flex-flow: row nowrap; }
+    @media screen and (max-width: 768px) {
+      footer .contained {
+        flex-flow: row wrap; } }
+    footer .contained > div {
+      display: flex;
+      flex: 1;
+      flex-flow: column nowrap;
+      padding: 50px 50px 100px 0; }
+      @media screen and (min-width: 415px) and (max-width: 768px) {
+        footer .contained > div {
+          flex: initial;
+          padding: 50px 0;
+          width: 50%; } }
+      @media screen and (max-width: 414px) {
+        footer .contained > div {
+          flex: initial;
+          padding: 35px 0 0;
+          width: 100%; }
+          footer .contained > div:last-of-type {
+            padding-bottom: 100px; } }
+      footer .contained > div h3 {
+        color: #87AF90;
+        line-height: 115%;
+        margin: 0 0 .25em;
+        text-transform: uppercase; }
+      footer .contained > div p,
+      footer .contained > div address {
+        color: #858C82; }
+      footer .contained > div ul {
+        margin: inherit 0 0;
+        padding: 0; }
+        footer .contained > div ul li {
+          color: #858C82;
+          margin: 0 0 10px;
+          display: block; }
+      @media screen and (min-width: 769px) {
+        footer .contained > div:nth-of-type(1) {
+          flex: .15; }
+        footer .contained > div:nth-of-type(2) {
+          flex: .50; }
+        footer .contained > div:nth-of-type(3) {
+          flex: .15; }
+        footer .contained > div:last-of-type {
+          flex: .20;
+          padding-right: 0; } }

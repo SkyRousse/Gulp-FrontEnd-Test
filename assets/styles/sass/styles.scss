@@ -1,0 +1,372 @@
+// Imports
+@import 'var';
+
+// Global Font styles
+
+h1,
+h2,
+h3,
+h4 {
+  color: $blue-dk;
+  font-family: $fontTitle;
+  line-height: 100%;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: .35em;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 2em;
+  }
+}
+
+p,
+li,
+th,
+td,
+address {
+  font: normal normal normal 18px/1.5 $fontText;
+}
+
+address {
+  margin-top: 1em;
+}
+
+.mobile-only {
+  display: none;
+
+  @media screen and (max-width: $tablet) {
+    display: inline-block;
+  }
+}
+
+
+// Styles for Front-End Testing
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.contained {
+  margin: 0 auto;
+  max-width: 1250px;
+  width: 100%;
+
+  @media screen and (min-width: #{$phone + 1}) and (max-width: $desktop) {
+    padding-left: 50px;
+    padding-right: 50px;
+    width: auto;
+  }
+
+  @media screen and (max-width: $phone) {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: auto;
+  }
+}
+
+#header {
+  background: $blue-dk;
+
+  header {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-bottom: 25px;
+    padding-top: 25px;
+
+    h1 {
+      color: $white;
+      display: flex;
+      flex: 1;
+      font-family: $fontTitle;
+      letter-spacing: 0.05em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav-link {
+      position: relative;
+      top: 6px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  nav {
+    background: $blue-lt;
+
+    @media screen and (max-width: $tablet) {
+      display: none;
+    }
+
+    > ul {
+      display: flex;
+      flex-flow: row nowrap;
+      margin: 0 inherit;
+      padding: 0;
+
+      @media screen and (max-width: $desktop) {
+        padding: 0 50px;
+      }
+
+      li {
+        display: flex;
+        line-height: 100%;
+        margin: 0;
+
+        a,
+        a:link {
+          color: white;
+          display: inline-block;
+          font-size: .8em;
+          letter-spacing: 0.1em;
+          padding: 12px 20px;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          &:hover {
+            color: $hover;
+          }
+        }
+
+        &:first-of-type {
+
+          a,
+          a:link {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile navigation
+#mobile-nav {
+  background: darken($blue-dk, 10%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .pullout-close {
+    height: 35px;
+    width: 55px;
+    color: $blue-lt;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 99;
+
+    span {
+      color: $white;
+      font-family: $fontText;
+      font-size: 2em;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    border-top: 1px solid $blue-lt;
+    margin: 56px 0 0;
+    padding: 0;
+    z-index: 0;
+
+    li {
+      display: block;
+
+      a {
+        border-bottom: 1px solid $blue-lt;
+        color: $white;
+        display: block;
+        padding: 15px 50px 15px 25px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#hero {
+  background: $white;
+
+  img {
+    height: auto;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+#content {
+  background: $white;
+
+  .contained {
+
+    .left-col {
+      border-right: 1px solid lighten($brown-gray, 40%);
+
+      h2 {
+        color: $green;
+        font-size: 1.25em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: $brown-gray;
+        font-size: 16px;
+      }
+    }
+
+    .right-col {
+
+    }
+  }
+}
+
+#products {
+  background: $beige;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @media screen and (max-width: $phone) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  h2 {
+    font-size: 3em;
+
+    @media screen and (max-width: $phone) {
+      font-size: 2em;
+    }
+  }
+
+  // <ul>
+  .products-grid {
+
+    // <li>
+    .item {
+
+      .inner-item {
+        padding: 0 0 50px 0;
+
+        img {
+          border: 1px solid $brown-gray;
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 15px;
+        }
+
+        .product-info {
+
+          h3.product-name {
+            margin-bottom: 7px;
+
+            a {
+              color: $link;
+              text-decoration: none;
+            }
+          }
+
+          .product-sub-title {
+            color: lighten($brown-gray, 3%);
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background: lighten($beige, 10%);
+  border-top: 2px solid $blue-dk;
+
+  .contained {
+    display: flex;
+    flex-flow: row nowrap;
+
+    @media screen and (max-width: $tablet) {
+      flex-flow: row wrap;
+    }
+
+    > div {
+      display: flex;
+      flex: 1;
+      flex-flow: column nowrap;
+      padding: 50px 50px 100px 0;
+
+      @media screen and (min-width: #{$phone + 1}) and (max-width: $tablet) {
+        flex: initial;
+        padding: 50px 0;
+        width: 50%;
+      }
+
+      @media screen and (max-width: $phone) {
+        flex: initial;
+        padding: 35px 0 0;
+        width: 100%;
+
+        &:last-of-type {
+          padding-bottom: 100px;
+        }
+      }
+
+      h3 {
+        color: $green;
+        line-height: 115%;
+        margin: 0 0 .25em;
+        text-transform: uppercase;
+      }
+
+      p,
+      address {
+        color: $brown-gray;
+      }
+
+      ul {
+        margin: inherit 0 0;
+        padding: 0;
+
+        li {
+          color: $brown-gray;
+          margin: 0 0 10px;
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: #{$tablet + 1}) {
+
+        &:nth-of-type(1) {
+          flex: .15;
+        }
+
+        &:nth-of-type(2) {
+          flex: .50;
+        }
+
+        &:nth-of-type(3) {
+          flex: .15;
+        }
+
+        &:last-of-type {
+          flex: .20;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
