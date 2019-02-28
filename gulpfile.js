@@ -16,6 +16,9 @@ const
   // sass modules
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
+  // html modules
+  preprocess = require('gulp-preprocess'),
+  htmlclean = require('gulp-htmlclean'),
   // js modules
   babel = require('gulp-babel'),
   webpack = require('webpack-stream'),
@@ -26,10 +29,32 @@ const
   size = require('gulp-size'),
   plumber = require('gulp-plumber'),
   browsersync = devBuild ? require('browser-sync').create() : null,
-  concat = require('gulp-concat');
+  concat = require('gulp-concat'),
+  pkg = require('./package.json');
 
 console.log('Gulp', devBuild ? 'development' : 'production', 'build');
 
+/**************** html task ****************/
+const htmlConfig = {
+  src: dir.src + '*.html',
+  watch: [dir.src + '*.html', dir.src + 'template/**/*'],
+  build: dir.build,
+  context: {
+    devBuild: devBuild,
+    author: pkg.author,
+    version: pkg.version
+  }
+}
+
+function html() {
+  var page = gulp.src(htmlConfig.src).pipe(preprocess({ context: htmlConfig.context }));
+  if (!devBuild) {
+    page = page.pipe(htmlclean());
+  }
+  return page.pipe(gulp.dest(htmlConfig.build));
+};
+
+exports.html = html
 
 /**************** CSS task ****************/
 
@@ -129,6 +154,9 @@ function server(done) {
 
 function watch(done) {
 
+  // html changes
+  gulp.watch(htmlConfig.src, html);
+
   // CSS changes
   gulp.watch(cssConfig.watch, css);
 
@@ -141,4 +169,4 @@ function watch(done) {
 
 /**************** default task ****************/
 
-exports.default = gulp.series(exports.css, exports.js, watch, server);
+exports.default = gulp.series(exports.html, exports.css, exports.js, watch, server);
