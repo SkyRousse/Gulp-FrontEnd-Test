@@ -1,13 +1,19 @@
 {
-  "name": "fe-testing",
+  "name": "front-end-test",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Sky Rousse Front End Test for Gray Box",
+  "main": "build/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "build": "gulp build"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SkyRousse/Gulp-FrontEnd-Test"
+  },
+  "author": "Sky Rousse",
+  "license": "MIT",
+  "homepage": "https://github.com/SkyRousse/Gulp-FrontEnd-Test",
   "devDependencies": {
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^4.0.1"
