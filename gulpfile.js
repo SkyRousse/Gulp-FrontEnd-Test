@@ -31,10 +31,21 @@ const
   size = require('gulp-size'),
   plumber = require('gulp-plumber'),
   browsersync = devBuild ? require('browser-sync').create() : null,
+  del = require('del'),
   concat = require('gulp-concat'),
   pkg = require('./package.json');
 
 console.log('Gulp', devBuild ? 'development' : 'production', 'build');
+
+/**************** clean task ****************/
+
+function clean() {
+
+  return del([dir.build]);
+
+}
+exports.clean = clean;
+exports.wipe = clean;
 
 /**************** html task ****************/
 const htmlConfig = {

@@ -24,6 +24,7 @@
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp-concat": "^2.6.1",
+    "del": "3.0.0",
     "gulp-size": "3.0.0",
     "gulp-plumber": "^1.2.1",
     "autoprefixer": "9.4.3",
