@@ -2,7 +2,7 @@
 A simple demo of using Gulp4 for modern web development.
 
 ## See the project live on github-pages
-[Gulp4Demo](https://skyrousse.github.io/Gulp-FrontEnd-Test/) *When viewing on github pages your browser may block scripts from http://via.placeholder.com/  - in order for the images to load in you need to allow those scripts to load *
+[Visit the demo site here:  https://skyrousse.github.io/Gulp-FrontEnd-Test/](https://skyrousse.github.io/Gulp-FrontEnd-Test/) *When viewing on github pages your browser may block scripts from http://via.placeholder.com/  - in order for the images to load in you need to allow those scripts to load *
 
 ## Here is a list of the current features:
 
