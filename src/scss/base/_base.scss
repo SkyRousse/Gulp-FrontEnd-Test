@@ -68,9 +68,18 @@ body {
   background: $white;
 
   .contained {
-
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    margin-right: -1rem;//-0.5rem;
+    margin-left: -1rem;//-0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @media screen and (min-width: #{$tablet + 1}) {
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+    }
     .left-col {
-      border-right: 1px solid lighten($brown-gray, 40%);
 
       h2 {
         color: $green;
@@ -83,10 +92,33 @@ body {
         color: $brown-gray;
         font-size: 16px;
       }
+      @media screen and (max-width: #{$tablet}) {
+        flex-basis: 100%;
+        max-width: 100%;
+        order: 2;
+        padding: 2rem;
+      }
+      @media screen and (min-width: #{$tablet + 1}) {
+        border-right: 1px solid lighten($brown-gray, 40%);
+        flex-basis: 33.33333333%;
+        max-width: 33.33333333%;
+        padding-right: 3rem;
+      }
     }
 
     .right-col {
-
+      @media screen and (max-width: #{$tablet}) {
+        flex-basis: 100%;
+        max-width: 100%;
+        border-bottom: 1px solid lighten($brown-gray, 40%);
+        order: 1;
+        padding: 2rem;
+      }
+      @media screen and (min-width: #{$tablet + 1}) {
+        flex-basis: 66.66666667%;
+        max-width: 66.66666667%;
+        padding-left: 3rem;
+      }
     }
   }
 }
