@@ -208,5 +208,5 @@ function watch(done) {
 /**************** build tasks ****************/
 exports.dev = gulp.series(exports.html, exports.css, exports.js)
 exports.build = gulp.series(exports.clean, exports.html, exports.css, exports.js, exports.vendor);
-exports.deploy = () => src(dir.build).pipe(ghPages());
+exports.deploy = () => gulp.src(dir.build + '**/*').pipe(ghPages());
 exports.default = gulp.series(gulp.series(exports.build, gulp.parallel(server, watch)));
