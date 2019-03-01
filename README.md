@@ -1,53 +1,76 @@
-#Before you start, here's what you need to know how to use:
+# Gulp4 demo project
+A simple demo of using Gulp4 for modern web development.
 
-- Node.js / npm [ https://www.npmjs.com/get-npm ]
-- gulp
-- sass
-- jQuery
-- html/html5
+## See the project live on github-pages
+[Gulp4Demo](https://skyrousse.github.io/Gulp-FrontEnd-Test/)
 
+*Know issue: images served from http://via.placeholder.com/ don't seem to be rendering on gh-pages but will work locally*
 
-TASKS
+## Here is a list of the current features:
 
-Estimated time to complete:  90 minutes
+- Copy HTML files from `src` to `build` directory
+- Support for using html templates
+- Compile Sass to CSS, autoprefix, minify CSS and put it inside `build` directory
+- Compile ES6+ to ES5, concatenate JS files and minify code
+- Compress and copy images into `build` directory
+- Copy dependencies specified in `package.json` from `src/node_modules` directory into `node_modules` folder inside `build` directory
+- Import dependencies into your application with ES6 modules
+- Spin up local dev server at `http://localhost:3000` including auto-reloading
 
-#Step 1 - Setup local environment to leverage gulp to process sass files
+## Requirements
+This should be installed on your computer in order to get up and running:
 
-You will be tasked to style a one page layout with navigation, hero, content, products and footer.  Before you design, you’ll need to setup gulp to run locally on your machine.
+- [Node.js](https://nodejs.org/en/)
+- [Gulp 4](https://gulpjs.com/)
+- [Sass](http://sass-lang.com/)
 
-#Step 2 - Work Requested - Style Content Block
+## Dependencies
+These [npm](https://www.npmjs.com/) packages are used in this project:
 
-Desktop (769px and over) should have a left/right horizontal layout to match comps in COMPS folder.
-Mobile (768px and under) should have a vertical layout where the left hand column on desktop is the LAST column on mobile layouts with a border to separate the two blocks of content.
+- [@babel/core](https://www.npmjs.com/package/@babel/core)
+- [@babel/preset-env](https://www.npmjs.com/package/@babel/preset-env)
+- [browser-sync](https://www.npmjs.com/package/browser-sync)
+- [del](https://www.npmjs.com/package/del)
+- [gulp](https://www.npmjs.com/package/gulp)
+- [gulp-autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer)
+- [gulp-babel](https://www.npmjs.com/package/gulp-babel)
+- [gulp-concat](https://www.npmjs.com/package/gulp-concat)
+- [gulp-cssnano](https://www.npmjs.com/package/gulp-cssnano)
+- [gulp-plumber](https://www.npmjs.com/package/gulp-plumber)
+- [gulp-sass](https://www.npmjs.com/package/gulp-sass)
+- [gulp-sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps)
+- [gulp-uglify](https://www.npmjs.com/package/gulp-uglify)
+- [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin)
+- [webpack-stream](https://www.npmjs.com/package/webpack-stream)
 
-*Match the screenshots as closely as possible*
-*Do NOT use:  “float” or “tables” for any part of this assignment.  Hint: “flex”*
+For more information, take a look at the [package.json]((https://github.com/SkyRousse/Gulp-FrontEnd-Test/blob/master/package.json)) file or visit the linked npm package sites.
 
-#Step 3 - Work Requested - Style Product Tiles
+## Usage
 
-Desktop (769px and over) - should have product blocks that are 4 per row (see comps in COMPS folder).  
-Tablet (768px and under) - should have product blocks there are 3 per row (see comps in COMPS folder).  
-Phone (414px and under) - should have product blocks there are 2 per row (see comps in COMPS folder).
-On each row, make sure that the edges of the product tiles are flush/even with the left and right container borders.
+### Build scripts
 
-*Match the screenshots as closely as possible*
-*Do NOT use:  “float” or “tables” for any part of this assignment.  Hint: “flex”*
+1. `npm start`: This is the normal development script used to build all files and run all tasks, but also to serve a development server and watch for changes.
+2. `npm run build`: This is used to build all files and run all tasks without serving a development server and watching for changes.
 
-#Step 4 - Work Requested - Convert Product Images to Use <picture> HTML5 Specifications
+### Images types that are supported
+The following types of images are currently supported:
 
-Update product image instances in the #products block with <picture> tags that adheres to the following specs.
+- PNG
+- JPG / JPEG
+- GIF
+- SVG
+- ICO (not compressed)
 
-- At 876px and above viewport widths - image size should be 300x300.
-- At 875px and below viewport widths - image size should be 200x200.
-- Default image size is 300x300 for browsers that don’t recognize the <picture> tag
-- Include/reference to both regular AND retina images ("2x") where allowed.
+### Specifying dependenciesto be copied to the `build` folder
+You don't need to specify your dependencies anywhere else than in your `package.json` file.
+Just install your dependencies via npm and all your dependencies get automatically loaded and copied into the `build` folder.
 
-*Note: use the placeholder image examples [ http://via.placeholder.com/300x300 ]. You set the dimensions after the last '/'.*
+### How can I load dependencies inside my application?
+ES6 modules are supported and can be used like this:
 
-#Step 5 - Work Requested - Add scripts to enable a mobile menu.
+```js
+import jQuery from 'jQuery';
+```
 
-Using jQuery and editing the app.js file in the assets folder, (1) add script(s) to enable a mobile navigation that slides down when clicking on the hamburger/mobile menu button (only visible at viewport sizes at and below 768px) and (2) closes when clicking on the "X" when the mobile menu is open.
-
-The mobile menu can be located on the index.htm file by searching for a div with the id of "mobile-nav".
-
-See comps in COMPS folder for examples.
+## License
+This project is licensed under the [MIT License](https://github.com/SkyRousse/Gulp-FrontEnd-Test/blob/master/LICENSE).
