@@ -27,6 +27,7 @@ const
   // node modules
   node_dependencies = Object.keys(require('./package.json').dependencies || {}),
   // util modules
+  ghPages = require('gulp-gh-pages'),
   noop = require('gulp-noop'),
   size = require('gulp-size'),
   plumber = require('gulp-plumber'),
@@ -205,7 +206,7 @@ function watch(done) {
 
 
 /**************** build tasks ****************/
-
-exports.build = gulp.series(exports.clean, exports.html, exports.css, exports.js, exports.vendor);
 exports.dev = gulp.series(exports.html, exports.css, exports.js)
+exports.build = gulp.series(exports.clean, exports.html, exports.css, exports.js, exports.vendor);
+exports.deploy = () => src(dir.build).pipe(ghPages());
 exports.default = gulp.series(gulp.series(exports.build, gulp.parallel(server, watch)));
