@@ -203,6 +203,9 @@ function watch(done) {
 
 }
 
-/**************** default task ****************/
 
-exports.default = gulp.series(exports.html, exports.css, exports.js, exports.vendor, watch, server);
+/**************** build tasks ****************/
+
+exports.build = gulp.series(exports.clean, exports.html, exports.css, exports.js, exports.vendor);
+exports.dev = gulp.series(exports.html, exports.css, exports.js)
+exports.default = gulp.series(gulp.series(exports.build, gulp.parallel(server, watch)));
