@@ -4,7 +4,7 @@ A simple demo of using Gulp4 for modern web development.
 ## See the project live on github-pages
 [Gulp4Demo](https://skyrousse.github.io/Gulp-FrontEnd-Test/)
 
-*Know issue: images served from http://via.placeholder.com/ don't seem to be rendering on gh-pages but will work locally*
+*Know issue: your browser may block scripts from http://via.placeholder.com/  - in order for the images to load in you need to tell your browser to ignore this warning and allow the scripts to load *
 
 ## Here is a list of the current features:
 
