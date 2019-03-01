@@ -18,16 +18,35 @@
 
   // <ul>
   .products-grid {
-
+    display: flex;
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+    margin-right: -1rem;//-0.5rem;
+    margin-left: -1rem;//-0.5rem;
+    list-style-type: none;
+    padding-inline-start: unset;
     // <li>
     .item {
-
+      padding: 0 1rem;
+      @media screen and (max-width: #{$phone}) {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+      @media screen and (min-width: #{$phone + 1}) {
+        flex-basis: 33.33333333%;
+        max-width: 33.33333333%;
+      }
+      @media screen and (min-width: #{$tablet + 1}) {
+        flex-basis: 25%;
+        max-width: 25%;
+      }
       .inner-item {
         padding: 0 0 50px 0;
 
         img {
           border: 1px solid $brown-gray;
           max-width: 100%;
+          width: 100%;
           height: auto;
           margin-bottom: 15px;
         }
