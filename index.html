@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald|Slabo+27px" rel="stylesheet">
+  <link rel="stylesheet" media="all" href="css/main.css">
+  
+</head>
+
+<body>
+  <section id="header">
+    <header class="contained">
+      <h1>ACME, Inc.</h1>
+      <div class="mobile-nav-link mobile-only">
+        <span class="mobile-nav-toggle">
+          <svg width="31" height="21" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#FFF" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="square">
+              <path d="M2.5 2.5h26.306M2.5 10.5h26.306M2.5 18.5h26.306" />
+            </g>
+          </svg>
+        </span>
+      </div>
+    </header>
+    <nav id="navigation">
+      <ul class="contained">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Link Two</a></li>
+        <li><a href="#">Three Is Three</a></li>
+        <li><a href="#">Fourth is Best</a></li>
+      </ul>
+    </nav>
+  </section>
+  
+  <div class="mobile-pullout" id="mobile-nav" style="display: none;">
+    <div class="pullout-close">
+      <span>X</span>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Link Two</a></li>
+      <li><a href="#">Three Is Three</a></li>
+      <li><a href="#">Fourth is Best</a></li>
+    </ul>
+  </div>
+  
+  <section id="hero">
+    <div class="hero">
+      <picture>
+        <source media="(min-width: 876px)"
+          srcset="http://via.placeholder.com/1200x250, http://via.placeholder.com/2400x500 2x">
+        <source media="(max-width: 768px)"
+          srcset="http://via.placeholder.com/767x400, http://via.placeholder.com/1534x800 2x">
+        <source srcset="http://via.placeholder.com/875x182, http://via.placeholder.com/1750x364 2x">
+        <img src="http://via.placeholder.com/1200x250" alt="Hero Image">
+      </picture>
+    </div>
+  </section>
+  <section id="content">
+    <div class="contained">
+      <div class="left-col">
+        <h2>Header Two</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.</p>
+      </div>
+      <div class="right-col">
+        <h1>Header One</h1>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+          dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+          numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+          veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+          consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+          consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+      </div>
+    </div>
+  </section>
+  <section id="products">
+    <div class="contained">
+      <h2>Header Two</h2>
+      <ul class="products-grid products-grid--max-4-col first last odd even">
+        <li class="item">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-006" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-001" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-002" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-003" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-004" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-005" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-006" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item last">
+          <div class="inner-item">
+            <a href="#" title="Product Widget One" class="product-image">
+              <picture>
+                <source media="(min-width: 876px)"
+                  srcset="http://via.placeholder.com/300x300, http://via.placeholder.com/600x600 2x">
+                <source srcset="http://via.placeholder.com/200x200, http://via.placeholder.com/400x400 2x">
+                <img id="product-collection-image-007" src="http://via.placeholder.com/300x300"
+                  alt="Product One in Black">
+              </picture>
+            </a>
+            <div class="product-info">
+              <h3 class="product-name">
+                <a href="#" title="Jarvis Bamboo Standing Desk">Product Widget One</a>
+              </h3>
+              <div class="product-sub-title">"Best widget ever" 4 years running</div>
+              <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                <meta itemprop="priceCurrency" content="USD">
+                <span class="regular-price" itemprop="price" content="395" data-price="product-price-3890">
+                  <span class="price">$395.00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <div class="contained">
+      <div class="col">
+        <h3>Title One</h3>
+        <ul>
+          <li>One Thing</li>
+          <li>Another Thing</li>
+          <li>Two Things</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>Two Title</h3>
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+          dolores eos qui ratione voluptatem sequi nesciunt.</p>
+      </div>
+      <div class="col">
+        <h3>Third Title</h3>
+        <address>
+          333 Some Address<br>
+          Portland, OR 333333
+        </address>
+      </div>
+      <div class="col">
+        <h3>Last Title That Will Be Long Enough to Wrap</h3>
+        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="js/main.js"></script>
+  
+</body>
+
+</html>
