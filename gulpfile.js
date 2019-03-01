@@ -24,6 +24,8 @@ const
   webpack = require('webpack-stream'),
   uglify = require('gulp-uglify'),
   sourcemaps = devBuild ? require('gulp-sourcemaps') : null,
+  // node modules
+  node_dependencies = Object.keys(require('./package.json').dependencies || {}),
   // util modules
   noop = require('gulp-noop'),
   size = require('gulp-size'),
@@ -131,6 +133,26 @@ function js() {
 }
 exports.js = js
 
+/**************** Vendor task ****************/
+const vendorConfig = {
+  src: './node_modules/',
+  watch: './node_modules/',
+  build: dir.build + 'node_modules/',
+}
+function vendor() {
+  if (node_dependencies.length === 0) {
+    return new Promise((resolve) => {
+      console.log("No dependencies specified");
+      resolve();
+    });
+  }
+
+  return gulp.src(node_dependencies.map(dependency => vendorConfig.src + dependency + '/**/*.*'), { base: vendorConfig.src })
+    .pipe(gulp.dest(vendorConfig.build))
+};
+
+exports.vendor = vendor
+
 
 /**************** server task (now private) ****************/
 
@@ -163,10 +185,13 @@ function watch(done) {
   // JS changes
   gulp.watch(jsConfig.watch, js);
 
+  // Node Module changes
+  gulp.watch(vendorConfig.watch, vendor)
+
   done();
 
 }
 
 /**************** default task ****************/
 
-exports.default = gulp.series(exports.html, exports.css, exports.js, watch, server);
+exports.default = gulp.series(exports.html, exports.css, exports.js, exports.vendor, watch, server);
