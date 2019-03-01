@@ -47,13 +47,18 @@ For more information, take a look at the [package.json]((https://github.com/SkyR
 
 ## Usage
 
-### Build scripts
+### Build scripts using npm commands
 
-1. `npm start`: This is the normal development script used to build all files and run all tasks, but also to serve a development server and watch for changes.
+1. `npm start`: This will build all files and run all tasks, as well as spin up a dev server and watch for changes.
 2. `npm run build`: This is used to build all files and run all tasks without serving a development server and watching for changes.
 
-### Images types that are supported
-The following types of images are currently supported:
+### Build scripts using gulp commands
+
+1. `gulp`: (same as `npm start` above)
+2. `gulp-build`: (same as `npm build` above)
+
+
+### Image types that are supported
 
 - PNG
 - JPG / JPEG
