@@ -70,6 +70,23 @@ function html() {
 
 exports.html = html
 
+/**************** Imgs task ****************/
+const imgConfig = {
+  src: dir.src + 'images',
+  watch: dir.src + 'images/**/*',
+  build: dir.build + 'images/',
+}
+
+function images() {
+  return gulp.src([imgConfig.src + '/**/*.+(png|jpg|jpeg|gif|svg|ico)'])
+    .pipe(plumber())
+    .pipe(imagemin())
+    .pipe(gulp.dest(dist_assets_folder + 'images'))
+    .pipe(browserSync.stream());
+};
+
+exports.images = images
+
 /**************** CSS task ****************/
 
 const cssConfig = {
@@ -191,6 +208,9 @@ function watch(done) {
   // html changes
   gulp.watch(htmlConfig.src, html);
 
+  // image changes
+  gulp.watch(imgConfig.src, images);
+
   // CSS changes
   gulp.watch(cssConfig.watch, css);
 
@@ -206,7 +226,7 @@ function watch(done) {
 
 
 /**************** build tasks ****************/
-exports.dev = gulp.series(exports.html, exports.css, exports.js)
-exports.build = gulp.series(exports.clean, exports.html, exports.css, exports.js, exports.vendor);
+exports.dev = gulp.series(exports.html, exports.images, exports.css, exports.js)
+exports.build = gulp.series(exports.clean, exports.html, exports.images, exports.css, exports.js, exports.vendor);
 exports.deploy = () => gulp.src(dir.build + '**/*').pipe(ghPages());
 exports.default = gulp.series(gulp.series(exports.build, gulp.parallel(server, watch)));
