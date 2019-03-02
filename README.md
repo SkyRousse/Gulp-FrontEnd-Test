@@ -64,11 +64,11 @@ For more information, take a look at the [package.json]((https://github.com/SkyR
 - SVG
 - ICO (not compressed)
 
-### Specifying dependenciesto be copied to the `build` folder
+### Specifying dependencies to be copied to the `build` folder
 You don't need to specify your dependencies anywhere else than in your `package.json` file.
 Just install your dependencies via npm and all your dependencies get automatically loaded and copied into the `build` folder.
 
-### How can I load dependencies inside my application?
+### Loading dependencies
 ES6 modules are supported and can be used like this:
 
 ```js
